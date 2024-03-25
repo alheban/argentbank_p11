@@ -1,8 +1,21 @@
 import React from "react";
 import argentBankLogo from "./../../assets/argentBankLogo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logOut } from "../../app/actions/authActions";
 
 function Header() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const user = useSelector((state) => state.profil.user);
+  
+  const handleSignOut = (e) => {
+    e.preventDefault();
+    dispatch(logOut());
+    navigate('/');
+  };
+
   return (
     <>
       <nav className="main-nav">
@@ -15,10 +28,24 @@ function Header() {
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
         <div>
-          <NavLink className="main-nav-item" to="/sign-in">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-          </NavLink>
+          {isAuthenticated ? (
+            <Link className="main-nav-item">
+              <i className="fa fa-user-circle"></i>
+              {user.userName}
+            </Link>
+          ) : null}
+          <Link
+            to={isAuthenticated ? "/" : "/sign-in"}
+            className="main-nav-item"
+            onClick={isAuthenticated ? handleSignOut : undefined}
+          >
+            {isAuthenticated ? (
+              <i className="fa fa-sign-out"></i>
+            ) : (
+              <i className="fa fa-user-circle"></i>
+            )}
+            {isAuthenticated ? "Sign Out" : "Sign In"}
+          </Link>
         </div>
       </nav>
     </>
