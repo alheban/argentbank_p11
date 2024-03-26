@@ -1,6 +1,6 @@
 import React from "react";
 import argentBankLogo from "./../../assets/argentBankLogo.png";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../app/actions/authActions";
 
@@ -9,11 +9,11 @@ function Header() {
   const navigate = useNavigate();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const user = useSelector((state) => state.profil.user);
-  
+
   const handleSignOut = (e) => {
     e.preventDefault();
     dispatch(logOut());
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -29,7 +29,8 @@ function Header() {
         </Link>
         <div>
           {isAuthenticated ? (
-            <Link className="main-nav-item">
+            <Link className="main-nav-item" to=""
+            onClick={(e) => e.preventDefault()}>
               <i className="fa fa-user-circle"></i>
               {user.userName}
             </Link>
