@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getProfile } from '../actions/profilActions';
+import { getProfil } from '../actions/profilActions';
+import { putProfil } from '../actions/UpdateProfilAction';
 
 const initialState = {
   user: {
@@ -16,13 +17,20 @@ const profilSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getProfile.fulfilled, (state, action) => {
+      .addCase(getProfil.fulfilled, (state, action) => {
         state.user = action.payload;
         state.error = null;
       })
-      .addCase(getProfile.rejected, (state, action) => {
+      .addCase(getProfil.rejected, (state, action) => {
         state.error = action.payload;
-      });
+      })
+      .addCase(putProfil.fulfilled, (state, action) => {
+        state.user = { ...state.user, userName: action.payload };
+        state.error = null;
+      })
+      .addCase(putProfil.rejected, (state, action) => {
+        state.error = action.payload;
+      })
   },
 });
 

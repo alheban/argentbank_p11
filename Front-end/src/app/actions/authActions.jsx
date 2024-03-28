@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const LogIn = createAsyncThunk(
-  "auth/LogIn",
+  "authlogIn",
   async ({ email, password }, { rejectWithValue }) => {
     try {
       const response = await fetch('http://localhost:3001/api/v1/user/login', {
@@ -30,15 +30,4 @@ export const LogIn = createAsyncThunk(
 );
 
 
-export const logOut = createAsyncThunk(
-    'auth/LogOut',
-    async (_, { rejectWithValue }) => {
-      try {
-        localStorage.removeItem('token'); // Supprimez le token du local storage
-  
-        return null;
-      } catch (error) {
-        return rejectWithValue(error.message);
-      }
-    }
-  );
+

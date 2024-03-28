@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn } from "../../app/actions/authActions";
-import {  getProfile } from "../../app/actions/profilActions";
+import {  getProfil } from "../../app/actions/profilActions";
 function Form() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function Form() {
   
           // Si un token est trouvé, obtenir le profil de l'utilisateur et naviguer vers la page utilisateur
           if (token) {
-            await dispatch(getProfile());
+            await dispatch(getProfil());
             navigate("/user");
           } else {
             // Gérer le cas où aucun token n'est trouvé, par exemple afficher un message d'erreur
