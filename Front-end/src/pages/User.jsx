@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
 import { putProfil } from '../app/actions/UpdateProfilAction'
 import { useDispatch, useSelector } from "react-redux";
@@ -26,6 +26,9 @@ function User() {
     dispatch(putProfil(newUserName));
     setIsEditing(false);
   };
+
+
+  
 
 
   return (

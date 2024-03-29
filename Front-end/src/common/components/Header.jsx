@@ -20,7 +20,7 @@ function Header() {
   return (
     <>
       <nav className="main-nav">
-        <Link className="main-nav-logo" href="./index.html">
+        <Link to="/" className="main-nav-logo">
           <img
             className="main-nav-logo-image"
             src={argentBankLogo}

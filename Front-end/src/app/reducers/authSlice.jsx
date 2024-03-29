@@ -35,9 +35,9 @@ const authSlice = createSlice({
         state.token = null;
         state.error = action.payload;
       })
-      .addCase(PURGE, (state) => {
-        customEntityAdapter.removeAll(state);
-    })
+    //   .addCase(PURGE, (state) => {
+    //     customEntityAdapter.removeAll(state);
+    // })
   },
 });
 
