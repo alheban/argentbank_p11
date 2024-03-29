@@ -33,7 +33,7 @@ function Header() {
             <Link className="main-nav-item" to=""
             onClick={(e) => e.preventDefault()}>
               <i className="fa fa-user-circle"></i>
-              {user.userName}
+              <Link to="/profil" className="user-name-link">{user.userName}</Link>
             </Link>
           ) : null}
           <Link
