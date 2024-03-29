@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { LogIn } from '../actions/authActions';
 import { LogOut } from '../actions/logoutAction';
+import { PURGE } from "redux-persist";
 
 const initialState = {
   isAuthenticated: false,
@@ -33,7 +34,10 @@ const authSlice = createSlice({
         state.isAuthenticated = false;
         state.token = null;
         state.error = action.payload;
-      });
+      })
+      .addCase(PURGE, (state) => {
+        customEntityAdapter.removeAll(state);
+    })
   },
 });
 
