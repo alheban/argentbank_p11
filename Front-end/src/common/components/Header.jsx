@@ -30,11 +30,10 @@ function Header() {
         </Link>
         <div>
           {isAuthenticated ? (
-            <Link className="main-nav-item" to=""
-            onClick={(e) => e.preventDefault()}>
-              <i className="fa fa-user-circle"></i>
-              <Link to="/profil" className="user-name-link">{user.userName}</Link>
-            </Link>
+           <Link className="main-nav-item" to="/profil">
+           <i className="fa fa-user-circle"></i>
+           <span className="user-name-link">{user.userName}</span>
+         </Link>
           ) : null}
           <Link
             to={isAuthenticated ? "/" : "/sign-in"}

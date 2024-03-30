@@ -5,6 +5,8 @@ export const LogOut = createAsyncThunk(
     async (_, { rejectWithValue }) => {
       try {
         sessionStorage.removeItem('token'); // Supprimez le token du local storage
+
+
   
         return null;
       } catch (error) {
