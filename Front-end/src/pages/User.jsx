@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { putProfil } from '../app/actions/UpdateProfilAction'
 import { useDispatch, useSelector } from "react-redux";
 import Account from "../common/components/Account";
+import Button from "../common/components/Button";
 
 
 
@@ -68,8 +69,8 @@ function User() {
                 className='text_input'
               />
               <div className="buttons-form">
-                <button>Save</button>
-                <button onClick={handleCancel}>Cancel</button>
+                <Button title="Save"/>
+                <Button onClick={handleCancel} title="Cancel"/>
               </div>
             </div>
           </form>
@@ -80,9 +81,7 @@ function User() {
             <br />
             {user.firstName} {user.lastName}!
           </h1>
-          <button className="edit-button" onClick={handleEdit}>
-            Edit Name
-          </button>
+          <Button className="edit-button" onClick={handleEdit} title="Edit Name"/>
         </div>
       )}
 

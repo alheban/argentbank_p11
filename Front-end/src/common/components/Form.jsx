@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIn } from "../../app/actions/authActions";
 import { getProfil } from "../../app/actions/profilActions";
+import Button from "./Button";
+
 
 function Form() {
   const navigate = useNavigate();
@@ -76,8 +78,7 @@ function Form() {
         />
         <label htmlFor="remember-me">Remember me</label>
       </div>
-
-      <button className="sign-in-button">Sign In</button>
+      <Button className="sign-in-button" title = "Sign In"/>
       {error && <p>{error}</p>}
     </form>
   );
