@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { LogIn } from '../actions/authActions';
 import { LogOut } from '../actions/logoutAction';
-import { PURGE } from "redux-persist";
+
 
 const initialState = {
   isAuthenticated: false,
@@ -35,21 +35,6 @@ const authSlice = createSlice({
         state.token = null;
         state.error = action.payload;
       })
-    //   .addMatcher(
-    //     (action) => action.type === 'persist/REHYDRATE',
-    //     (state, action) => {
-    //       // Mettez à jour l'état avec les données réhydratées
-    //       return {
-    //         ...state,
-    //         isAuthenticated: action.payload.auth.isAuthenticated,
-    //         token: action.payload.auth.token,
-    //         error: action.payload.auth.error,
-    //       };
-    //     }
-    //   )
-    //   .addCase(PURGE, (state) => {
-    //     customEntityAdapter.removeAll(state);
-    // })
   },
 });
 

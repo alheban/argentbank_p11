@@ -1,19 +1,30 @@
+import React from "react";
+import { Link } from "react-router-dom"; // Importer NavLink depuis React Router
 import Button from "./Button";
+import { useSelector } from "react-redux";
 
+function Account({ title, totalamount, description, id, onClick}) {
+  const accounts = useSelector((state) => state.account); // Récupérer les données de compte depuis le store Redux
 
-function Account({ title, totalamount, description }) {
-    return (
+  // console.log('Account data:', accounts);
+  return (
     <section className="account">
-      <div className="account-content-wrapper">
-        <h3 className="account-title">{title}</h3>
-        <p className="account-amount">{totalamount}</p>
-        <p className="account-amount-description">{description}</p>
-      </div>
-      <div className="account-content-wrapper cta">
-        <Button title ="View transactions"className="transaction-button"/>
+      <div className="account-content-wrapper" >
+          <h3 className="account-title">{title}</h3>
+          <p className="account-amount">{totalamount}</p>
+          <p className="account-amount-description">{description}</p>
+        </div>
+        <div className="account-content-wrapper cta">
+          <Link to={`/transaction/${id}`} style={{ textDecoration: 'none' }}>
+            <Button
+              title="View transactions"
+              className="transaction-button"
+              onClick={() => onClick(id)}
+            />
+          </Link>
       </div>
     </section>
-    );
-  }
-  
-  export default Account;
+  );
+}
+
+export default Account;

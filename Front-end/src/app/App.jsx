@@ -7,6 +7,7 @@ import Footer from "../common/components/Footer";
 
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Transaction from "../pages/Transaction";
 
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -25,7 +26,9 @@ function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route element={<PrivateRoute isAuthenticated={true} />}>
           <Route path='/profil' element={<User />} />
+          <Route path='/transaction/:id' element={<Transaction />} />
         </Route>
+        
         <Route path='*' element={<Page404/>} />
       </Routes>
       <Footer />

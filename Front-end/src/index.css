@@ -15,6 +15,7 @@ body {
 
 .main {
   flex: 1;
+  padding: 1%;
 }
 
 .bg-dark {
@@ -54,10 +55,18 @@ body {
 .main-nav-item {
   text-decoration: none;
   margin-right: 0.5rem;
+  
 }
+.main-nav-item i{
+  text-decoration: none;
+  margin-right: 0.3rem;
+}
+
+
 
 .main-nav-item:hover {
   text-decoration: underline;
+
 }
 
 .main-nav-logo {
@@ -176,6 +185,7 @@ body {
 
 .sign-in-icon {
   font-size: 5rem;
+  color: #2c3e51;
 }
 
 .input-remember {
@@ -229,14 +239,17 @@ body {
   margin-bottom: 2rem;
 }
 
+
+
 .account-amount {
   margin: 0;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.account-amount-description {
-  margin: 0;
+.account i {
+    display: flex;
+    margin: 0.9rem;
 }
 
 .account-title {
@@ -249,6 +262,24 @@ body {
 .account-content-wrapper {
   width: 100%;
   flex: 1;
+}
+
+.account-detail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 0 auto;
+  flex-direction: row;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: left;
+  width: 95%;
+}
+
+
+.account i{
+  display: flex;
 }
 
 .edit-button {
@@ -274,6 +305,80 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+}
+
+
+
+
+.transaction {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #f6f6f6;
+  margin:auto;
+  width: 95%;
+  align-items: center;
+}
+
+.transaction.expanded {
+  color: #00bc77;
+  border-left: 10px solid #00bc77;
+  border-bottom: 1px dotted #00bc77;
+  width: calc(95% - 10px);
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.tableau {
+flex: 8;
+background-color: #12002b;
+color: white;
+}
+.transaction span {
+  flex: 8;
+  margin: 5px;
+}
+.transaction p {
+  flex: 8;
+  margin:15px; 
+}
+.account-transaction{
+  margin: 0 auto;
+  background-color:white;
+  width: 80%;
+}
+.transaction-detail{
+  display: flex;
+  flex-direction: row;
+  margin:auto;
+  width: 95%;
+  background-color: #ffffff; /* Couleur de fond */
+  border-radius: 8px; /* Arrondi des coins */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.transaction-detail span {
+  margin:15px;  
+}
+
+.transaction-detail-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #00bc77;
+  border-left: 10px solid #00bc77;
+  border-bottom-left-radius: 8px;
+
+}
+.transaction-detail-list-titre {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+.transaction-detail-fleche {
+  flex: 1; 
+  padding: 5px;
+  box-sizing: border-box; 
+  text-align: center;
 }
 
 @media (min-width: 720px) {

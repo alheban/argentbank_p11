@@ -31,7 +31,7 @@ function Header() {
         <div>
           {isAuthenticated ? (
            <Link className="main-nav-item" to="/profil">
-           <i className="fa fa-user-circle"></i>
+           <i className="fa fa-user-circle "></i>
            <span className="user-name-link">{user.userName}</span>
          </Link>
           ) : null}
