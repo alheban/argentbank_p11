@@ -80,13 +80,13 @@ function Transaction() {
         <section className="account-detail">
           <div className="account-content-wrapper">
             <h3 className="account-title">{selectedAccount.title}</h3>
-            <p className="account-amount">{selectedAccount.totalamount}</p>
-            <p className="account-amount-description">
+            <h3 className="account-amount">{selectedAccount.totalamount}</h3>
+            <h3 className="account-amount-description">
               {selectedAccount.description}
-            </p>
+            </h3>
           </div>
           <Link to="/profil">
-            <i className="fa fa-times sign-in-icon" aria-hidden="true"></i>
+            <i className="fa fa-times sign-in-icon" aria-hidden="true" alt="Icône de fermeture"></i>
           </Link>
         </section>
         <section >
