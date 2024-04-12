@@ -381,6 +381,10 @@ color: white;
   text-align: center;
 }
 
+.pencil{
+  margin:5px;
+}
+
 @media (min-width: 720px) {
   .account {
     flex-direction: row;

@@ -110,7 +110,7 @@ function Transaction() {
                   className="transaction-detail-fleche"
                   onClick={() => toggleExpandedTransaction(index)}
                 >
-                  <i class={`fa ${expandedTransaction === index ? "fa-angle-down" : "fa-angle-right"}`}></i>
+                  <i className={`fa ${expandedTransaction === index ? "fa-angle-down" : "fa-angle-right"}`}></i>
                 </div>
               </div>
             </section>
@@ -127,8 +127,8 @@ function Transaction() {
                   </div>
                   <div className="transaction-detail-list-titre">
                     <span>{transaction.transactionType}</span>
-                    <span>{transaction.category}</span>
-                    <span>{transaction.note}</span>
+                    <span>{transaction.category}<i className="fa fa-pencil pencil" aria-hidden="true"></i></span>
+                    <span>{transaction.note}<i className="fa fa-pencil pencil" aria-hidden="true"></i></span>
                   </div>
                 </div>
               </section>
