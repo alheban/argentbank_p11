@@ -79,7 +79,7 @@ function Form() {
         <label htmlFor="remember-me">Remember me</label>
       </div>
       <Button className="sign-in-button" title = "Sign In"/>
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
   );
 }
