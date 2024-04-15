@@ -308,7 +308,7 @@ body {
 }
 
 
-
+/* ////ajout  */
 
 .transaction {
   display: flex;
@@ -318,6 +318,7 @@ body {
   width: 95%;
   align-items: center;
 }
+
 
 .transaction.expanded {
   color: #00bc77;
@@ -384,11 +385,31 @@ color: white;
 .pencil{
   margin:5px;
 }
-
+@media (max-width: 425px) {
+  .transaction {
+    flex-direction: row;
+    font-size :12px;
+  }
+  .account-transaction {
+    width: 97%;
+  }
+  .sign-in-icon {
+    font-size: 3rem;
+    color: #2c3e51;
+}
+.transaction p {
+  flex: 8;
+  margin: 10px;
+}
+.transaction-detail span {
+  text-align: left;
+}
+}
 @media (min-width: 720px) {
   .account {
     flex-direction: row;
   }
+
 
   .account-content-wrapper.cta {
     flex: 0;
@@ -399,7 +420,7 @@ color: white;
   }
 }
 
-/* ////ajout  */
+
 
 .edit-form {
   padding: 20px;
